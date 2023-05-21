@@ -4,13 +4,18 @@ require "config.php";
 
 try {
 	$sql_users = "
-		CREATE TABLE IF NOT EXISTS users (
-			id INT AUTO_INCREMENT PRIMARY KEY,
-			first_name VARCHAR(50) NOT NULL,
-			last_name VARCHAR(50) NOT NULL,
-			email VARCHAR(100) UNIQUE NOT NULL,
-			pass VARCHAR(500) NOT NULL,
-			created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+	CREATE TABLE IF NOT EXISTS users (
+		id INT AUTO_INCREMENT PRIMARY KEY,
+		first_name VARCHAR(50) NOT NULL,
+		last_name VARCHAR(50) NOT NULL,
+		birthdate DATE NOT NULL,
+		gender VARCHAR(20),
+		address VARCHAR(250),
+		contact VARCHAR(15),
+		email VARCHAR(100) UNIQUE NOT NULL,
+		pass VARCHAR(500) NOT NULL,
+		created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+		
 		)
 	";
 	$conn->exec($sql_users);
